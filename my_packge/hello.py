@@ -1,17 +1,12 @@
 import requests
 import re
 
-proxies = {
-    "http": "http://127.0.0.1:33210",
-    "https": "http://127.0.0.1:33210",
-}
-
 url = "https://movie.douban.com/top250"
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
 }
 
-resp = requests.get(url, headers=headers, proxies=proxies)
+resp = requests.get(url, headers=headers)
 obj = resp.text
 
 reg = re.compile(
